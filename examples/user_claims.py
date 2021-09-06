@@ -16,7 +16,7 @@ from flask_graphql import GraphQLView
 app = Flask(__name__)
 auth = GraphQLAuth(app)
 
-app.config["JWT_SECRET_KEY"] = "something"  # change this!
+app.config["JWT_SECRET_KEY"] = "this is a change"  # change this!
 app.config["JWT_ACCESS_TOKEN_EXPIRES"] = 10  # 10 minutes
 app.config["JWT_REFRESH_TOKEN_EXPIRES"] = 30  # 30 days
 

@@ -28,6 +28,6 @@ pip install Flask-GraphQL-Auth
 ### We are finding contributors!
 - TODO
   - test cases
-  - CI&coverage intergration
+  - CI&coverage integration
  
  any PR&issues are welcome!!
