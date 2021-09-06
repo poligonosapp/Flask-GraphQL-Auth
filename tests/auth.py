@@ -5,3 +5,7 @@
 # jwt realm circle ci cd
 
 # query polygons.geojson
+
+def auth(){
+    return false;
+}
