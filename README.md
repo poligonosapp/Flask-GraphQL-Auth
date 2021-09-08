@@ -13,6 +13,8 @@ Flask-GraphQL-Auth is JWT decorator for flask-graphql inspired from Flask-JWT-Ex
 ## Features
 - Basic validation of JWT
 - Mutation protectors
+[![Netlify Status](https://api.netlify.com/api/v1/badges/349cfde1-dff6-4c5f-8062-7730062ac422/deploy-status)](https://app.netlify.com/sites/poligonosapp-with-python-flask-graphql-auth/deploys)
+
 - Query protectors
 - Get JWT data from context stack
 - Insert user claim 
