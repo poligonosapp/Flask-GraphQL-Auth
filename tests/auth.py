@@ -7,5 +7,6 @@
 # query polygons.geojson
 
 def auth(){
+    github_auth();
     return false;
 }
