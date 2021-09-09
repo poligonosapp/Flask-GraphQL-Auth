@@ -1,14 +1,23 @@
-FROM node:14-alpine
+################################################################################
+#
+# Python https://github.com/netlify/build-image/blob/focal/Dockerfile
+#
+################################################################################
 
-WORKDIR /code
+ENV PIPENV_RUNTIME 3.8
 
-RUN npm install -g nodemon
+USER root
 
-COPY package.json /code/package.json
-RUN npm install && npm ls
-RUN mv /code/node_modules /node_modules
+USER buildbot
 
-COPY . /code
+RUN virtualenv -p python2.7 /opt/buildhome/python2.7 && \
+    /bin/bash -c 'source /opt/buildhome/python2.7/bin/activate' && \
+    ln -nfs /opt/buildhome/python2.7 /opt/buildhome/python2.7.18
 
-CMD ["npm", "start"]
+RUN virtualenv -p python3.8 /opt/buildhome/python3.8 && \
+    /bin/bash -c 'source /opt/buildhome/python3.8/bin/activate' && \
+    ln -nfs /opt/buildhome/python3.8 /opt/buildhome/python3.8.10
 
+RUN /opt/buildhome/python${PIPENV_RUNTIME}/bin/pip install pipenv
+
+USER root
