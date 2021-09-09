@@ -16,9 +16,11 @@ def github_auth(){
     try{
         socialGithub = Social(auth0domain)
         socialGithub.login(client_id=auth0_python_client_id, access_token='repo-token', connection='github')
+        print(" GitHub Actions auth0 success ")
         return true;
     }
     finally{
+        print(" GitHub Actions auth0 failed ")
         return false;
     } # end finnaly
 }
